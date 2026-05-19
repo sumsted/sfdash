@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salesforce Apex Callout Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header>
+    <h1><span>Apex</span> Callout Dashboard</h1>
+    <div class="file-info" id="fileInfo"></div>
+  </header>
+
+  <main>
+    <div class="upload-area" id="uploadArea">
+      <h2>Upload Callout Event CSV</h2>
+      <p>Load your exported Apex callout event file to analyze metrics</p>
+      <button class="upload-btn" onclick="document.getElementById('csvInput').click()">Choose CSV File</button>
+      <input type="file" id="csvInput" accept=".csv">
+    </div>
+
+    <div id="dashboard" class="hidden">
+      <div class="filter-bar">
+        <label>Method:
+          <select id="filterMethod"><option value="all">All</option></select>
+        </label>
+        <label>Status:
+          <select id="filterStatus"><option value="all">All</option></select>
+        </label>
+        <label>Search URL:
+          <input type="text" id="filterUrl" placeholder="Filter by URL..." style="width:250px">
+        </label>
+      </div>
+
+      <div class="metrics-grid" id="metricsGrid"></div>
+      <div class="charts-grid" id="chartsGrid"></div>
+      <div id="tablesContainer"></div>
+    </div>
+  </main>
+
+  <script src="js/components/metric-card.js"></script>
+  <script src="js/components/bar-chart.js"></script>
+  <script src="js/components/line-chart.js"></script>
+  <script src="js/components/status-donut.js"></script>
+  <script src="js/components/data-table.js"></script>
+  <script src="js/components/caller-table.js"></script>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
